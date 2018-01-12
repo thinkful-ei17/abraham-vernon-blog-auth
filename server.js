@@ -70,7 +70,9 @@ passport.use(localStrategy);
 const localAuth = passport.authenticate('local',{session: false});
 
 
-
+app.get('/', (req, res) => {
+    res.send('Home');
+});
 app.post('/api/users', (req, res)=> {
 
     let {username, password, firstName, lastName} = req.body;

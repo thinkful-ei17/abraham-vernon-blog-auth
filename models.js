@@ -24,7 +24,10 @@ userSchema.statics.hashPassword = function(password){
 };
 
 userSchema.methods.validatePassword = function(password){
+  console.log(`This password is ${this.password}`);
+  console.log("in validatePassword; given : " + password);
   return bcrypt.compare(password, this.password);
+  //return this.password === password;
 };
 
 const blogPostSchema = mongoose.Schema({
@@ -53,7 +56,7 @@ blogPostSchema.methods.serialize = function () {
 };
 
 // const BlogPost = mongoose.model('BlogPosts', blogPostSchema);
-const BlogPost = mongoose.model('Stories', blogPostSchema);
+const BlogPost = mongoose.model('Posts', blogPostSchema);
 const UserModel = mongoose.model('User', userSchema);
 
 module.exports = { BlogPost, UserModel };
