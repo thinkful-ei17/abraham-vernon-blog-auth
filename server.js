@@ -212,21 +212,6 @@ let server;
 
 // this function connects to our database, then starts the server
 function runServer(databaseUrl = DATABASE_URL, port = PORT) {
-<<<<<<< HEAD
-    return new Promise((resolve, reject) => {
-        mongoose.connect(databaseUrl, { useMongoClient: true }, err => {
-            if (err) {
-                return reject(err);
-            }
-            server = app.listen( () => {
-                console.log(`Your app is listening on port ${port}`);
-                resolve();
-            })
-                .on('error', err => {
-                    mongoose.disconnect();
-                    reject(err);
-                });
-=======
   return new Promise((resolve, reject) => {
     mongoose.connect(databaseUrl, { useMongoClient: true }, err => {
       if (err) {
@@ -239,7 +224,6 @@ function runServer(databaseUrl = DATABASE_URL, port = PORT) {
         .on('error', err => {
           mongoose.disconnect();
           reject(err);
->>>>>>> parent of 81e7980... Somehow all our tests are working.
         });
     });
   });
