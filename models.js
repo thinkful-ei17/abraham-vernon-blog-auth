@@ -53,7 +53,7 @@ blogPostSchema.methods.serialize = function () {
 };
 
 // const BlogPost = mongoose.model('BlogPosts', blogPostSchema);
-const BlogPost = mongoose.model('Stories', blogPostSchema);
+const BlogPost = mongoose.model('Posts', blogPostSchema);
 const UserModel = mongoose.model('User', userSchema);
 
 module.exports = { BlogPost, UserModel };
